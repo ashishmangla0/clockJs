@@ -24,12 +24,12 @@ clockMin.setAttribute("style" , `transform:rotate(${minPosition}deg)`) ;
 };
 
 const options = {
-    threshold: 0,
+    threshold: .25,
   };
 let getTime;
 const handleObserver = (entries,observer) =>{
 entries.forEach((entry) => {
-    console.log(entry);
+    //console.log(entry);
     if(entry.isIntersecting){
          getTime = setInterval(getCurrentTime,1000);
     }
