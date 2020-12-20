@@ -25,3 +25,12 @@ body{
     background: linear-gradient(90deg, #4a0e8f 0%, #b430a7 51%, #4a0e8f 100%);
     color: #ffffff;
 }
+
+.clock__cover{
+
+    width: 500px;
+    height: 500px;
+    position: relative;
+border: 2px solid #ffffff;
+border-radius: 50%;
+}
