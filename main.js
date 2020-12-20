@@ -1,0 +1,1 @@
+const blockHero = document.querySelectorAll(".block--hero");
