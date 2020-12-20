@@ -13,12 +13,12 @@ const getCurrentTime = () => {
 const options = {
     threshold: 0,
   };
-
+let getTime;
 const handleObserver = (entries,observer) =>{
 entries.forEach((entry) => {
     console.log(entry);
     if(entry.isIntersecting){
-        var getTime = setInterval(getCurrentTime,1000);
+         getTime = setInterval(getCurrentTime,1000);
     }
     else{
         clearInterval(getTime)
