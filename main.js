@@ -14,14 +14,23 @@ const options = {
     threshold: 0,
   };
 
+let getTime;
+const timer = {
+    start : function(e){
+        getTime = setInterval(getCurrentTime,1000);
+    },
+    stop : function(e){
+        clearInterval(getTime);
+    }
+}
+
 const handleObserver = (entries,observer) =>{
 entries.forEach((entry) => {
-    console.log(entry);
     if(entry.isIntersecting){
-        var getTime = setInterval(getCurrentTime,1000);
+       timer.start();
     }
     else{
-        clearInterval(getTime)
+        timer.stop();
     }
 });
 }
@@ -29,4 +38,4 @@ entries.forEach((entry) => {
 const observerScroll = new IntersectionObserver(handleObserver,options);
 blockHero.forEach((hero)=>{
     observerScroll.observe(hero)
-})
+});
